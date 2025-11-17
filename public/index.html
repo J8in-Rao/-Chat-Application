@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Chat Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Login Screen -->
+        <div id="loginScreen" class="screen">
+            <div class="login-container">
+                <h1>Join Chat</h1>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <button type="submit">Continue</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main Chat Interface -->
+        <div id="chatScreen" class="screen hidden">
+            <div class="chat-container">
+                <!-- Sidebar with rooms and users -->
+                <div class="sidebar">
+                    <div class="rooms-section">
+                        <h3>Chat Rooms</h3>
+                        <div class="create-room">
+                            <input type="text" id="newRoomName" placeholder="New room name">
+                            <button id="createRoomBtn" title="Create Room">+</button>
+                        </div>
+                        <ul id="roomsList" class="rooms-list"></ul>
+                    </div>
+                    <div class="users-section">
+                        <h3>Users in Room</h3>
+                        <ul id="usersList" class="users-list"></ul>
+                    </div>
+                </div>
+
+                <!-- Main chat area -->
+                <div class="main-chat">
+                    <div class="chat-header">
+                        <h2 id="currentRoom">Select a Room</h2>
+                        <div class="current-users">Users: <span id="userCount">0</span></div>
+                    </div>
+                    <div class="messages-container">
+                        <ul id="messages" class="messages"></ul>
+                    </div>
+                    <div class="message-form-container">
+                        <form id="messageForm">
+                            <div class="message-input-container">
+                                <textarea 
+                                    id="messageInput" 
+                                    placeholder="Type your message..." 
+                                    required
+                                ></textarea>
+                                <div class="formatting-tools">
+                                    <button type="button" id="emojiBtn" title="Insert Emoji">😊</button>
+                                    <button type="button" id="linkBtn" title="Insert Link">🔗</button>
+                                </div>
+                                <div id="emojiPicker" class="emoji-picker hidden">
+                                    <div class="emoji-grid">
+                                        <span class="emoji-option">😀</span>
+                                        <span class="emoji-option">😂</span>
+                                        <span class="emoji-option">🥰</span>
+                                        <span class="emoji-option">😎</span>
+                                        <span class="emoji-option">🤩</span>
+                                        <span class="emoji-option">😍</span>
+                                        <span class="emoji-option">🤗</span>
+                                        <span class="emoji-option">🥳</span>
+                                        <span class="emoji-option">😜</span>
+                                        <span class="emoji-option">👍</span>
+                                        <span class="emoji-option">👏</span>
+                                        <span class="emoji-option">🙌</span>
+                                        <span class="emoji-option">❤️</span>
+                                        <span class="emoji-option">🔥</span>
+                                        <span class="emoji-option">💯</span>
+                                        <span class="emoji-option">🎉</span>
+                                        <span class="emoji-option">✨</span>
+                                        <span class="emoji-option">🙌</span>
+                                        <span class="emoji-option">😀</span>
+                                        <span class="emoji-option">😂</span>
+                                        <span class="emoji-option">🥰</span>
+                                        <span class="emoji-option">😎</span>
+                                        <span class="emoji-option">🤩</span>
+                                        <span class="emoji-option">😍</span>
+                                        <span class="emoji-option">🤗</span>
+                                        <span class="emoji-option">🥳</span>
+                                        <span class="emoji-option">😜</span>
+                                        <span class="emoji-option">👍</span>
+                                        <span class="emoji-option">👏</span>
+                                        <span class="emoji-option">🙌</span>
+                                        <span class="emoji-option">❤️</span>
+                                        <span class="emoji-option">🔥</span>
+                                        <span class="emoji-option">💯</span>
+                                        <span class="emoji-option">🎉</span>
+                                        <span class="emoji-option">✨</span>
+                                        <span class="emoji-option">🙌</span>
+                                        <span class="emoji-option">😀</span>
+                                        <span class="emoji-option">😂</span>
+                                        <span class="emoji-option">🥰</span>
+                                        <span class="emoji-option">😎</span>
+                                        <span class="emoji-option">🤩</span>
+                                        <span class="emoji-option">😍</span>
+                                        <span class="emoji-option">🤗</span>
+                                        <span class="emoji-option">🥳</span>
+                                        <span class="emoji-option">😜</span>
+                                        <span class="emoji-option">👍</span>
+                                        <span class="emoji-option">👏</span>
+                                        <span class="emoji-option">🙌</span>
+                                        <span class="emoji-option">❤️</span>
+                                        <span class="emoji-option">🔥</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
