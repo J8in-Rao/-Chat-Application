@@ -20,10 +20,9 @@ To get this project up and running on your local machine, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/J8in-Rao/-Chat-Application
     cd "Chat application"
     ```
-    (Note: Replace `<repository_url>` with the actual URL if this were a git repository. For this local project, you are already in the directory.)
 
 2.  **Install dependencies:**
     Navigate to the project directory and install the required Node.js packages:
